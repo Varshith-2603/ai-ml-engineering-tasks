@@ -1,0 +1,79 @@
+#1: Comments and Print
+# name = "Varshith" college name = "Icfai" course = "Mechatronics"
+#name = "Varshith"
+#college_name = "Icfai"
+#course = "Mechatronics"
+"""
+name = "Varshith"
+college_name = "Icfai"
+course = "Mechatronics"
+"""
+
+#2: Indentation Practise
+if True:
+    print("Hello World")
+print("Welcome to Python")
+
+
+#3: Variables Declaration
+name = "Varshith"
+age = 21
+height = 173.10
+is_student = True
+print (type(name))
+print(type(age))
+print(type(height))
+print(type(is_student))
+
+
+#4: Variable naming rules
+# wrong variable = 1st_name correct variable = first_name
+# wrong variable = my name correct variable = my_name
+# total@amount = correct variable
+#MyVar = correct variable
+#_score = correct variable
+#99marks = wrong variable
+
+#5: Arithmetic operators
+
+number1 = int(input("Enter first number: "))
+number2 = int(input("Enter second number: "))
+print("Sum of two numbers:",number1+number2)
+print("Difference of two numbers:",number1 - number2)
+print("Product of two numbers: ",number1 * number2)
+print("Division of two numbers: ",number1 / number2)
+print("Floor Division of two numbers: ",number1 // number2)
+print("Modulus of two numbers: ",number1 % number2)
+print("Power of two numbers: ",number1**number2)
+
+
+#6: Comparison operators
+number1 = int(input("Enter the first number: "))
+number2 = int(input("Enter the second number: "))
+print(number1 == number2)
+print(number1 != number2)
+print(number1 > number2)
+print(number1 < number2)
+print(number1 >= number2)
+print(number1 <= number2)
+
+
+#7: Assignment Operator
+a = 10
+a +=a
+print(a)
+a -=a
+print(a)
+a *=a
+print(a)
+a **=a
+print(a)
+
+
+#8: Local vs Global Variable
+college = "Icfai University"
+def hello():
+    global college
+    print(college)
+    return 
+print(college)
