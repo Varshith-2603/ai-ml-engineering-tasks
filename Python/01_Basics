@@ -77,3 +77,39 @@ def hello():
     print(college)
     return 
 print(college)
+
+
+# local variable
+def hello():
+    varshith = 10
+    print(varshith)
+    return 
+hello()
+
+#9: Simple Calculator
+number1 = float(input("Enter the first number: "))
+operator = input("Choose an Operator (+,-,*,/,//,%,**): ")
+number2 = float(input("Enter the second number: "))
+result = None
+if operator == '+':
+    result = number1 + number2
+elif operator == '-':
+    result = number1 - number2
+elif operator == '*':
+    result = number1 * number2
+elif operator == '/':
+    result = number1 / number2
+elif operator == '//':
+    result = number1 // number2
+elif operator == '%':
+    result = number1 % number2
+elif operator == '**':
+    result = number1**number2
+else:
+    print("Invalid operator")
+
+if result is not None:
+    print(result)
+
+
+#10: 
