@@ -381,3 +381,325 @@ hessian = [
     [mixed_partial_w3_w1,mixed_partial_w3_w2,second_partial_dw3]
 ]
 print("Hessian:",hessian)
+
+#INTERPRETATION OF HESSIAN
+#1
+hessian = [
+    [6,2],
+    [2,4]
+]
+print("Hessian:",hessian)
+print("Curvature w.r.t w1:",hessian[0][0])
+print("Curvature w.r.t w2:",hessian[1][1])
+print("Interaction w1-w2:",hessian[0][1])
+
+#2
+hessian = [
+    [10,0],
+    [0,4]
+]
+print("Hessian:",hessian)
+print("Curvature along w1:",hessian[0][0])
+print("Curvatue along w2:",hessian[1][1])
+print("Interaction between w1 and w2:",hessian[0][1])
+
+#3
+import numpy as np
+hessian = np.array([
+    [8,3],
+    [3,5]
+])
+print("Hessian:",hessian)
+print("Diagonal Elements:",hessian[0][0],",",hessian[1][1])
+print("Off Diagonal Elements:",hessian[0][1],",",hessian[1][0])
+
+#4
+hessian = [
+    [12,4],
+    [4,3]
+]
+print("Hessian:",hessian)
+print("Curvature w.r.t w1:",hessian[0][0])
+print("Curvature w.r.t w2:",hessian[1][1])
+print("Interaction between w1-w2:",hessian[0][1])
+print("w1 has the stronger individual curvature with rate of 12")
+
+#5
+import numpy as np
+hessian = np.array([
+    [20,-6,2],
+    [-6,8,1],
+    [2,1,3,]
+])
+print("Hessian:",hessian)
+print("Curvature w1:",hessian[0][0],",",hessian[1][1],",",hessian[2][2])
+print("Curvature w2:",hessian[0][1],",",hessian[0][2],hessian[1][2])
+print("Interaction w1-w2:",hessian[0][1],hessian[1][0])
+print("Interaction w1-w3:",hessian[0][2],hessian[2][0])
+print("Interaction w2-w3:",hessian[1][2],hessian[2][1])
+
+
+#6
+hessian = [
+    [15,-4,2],
+    [-4,6,1],
+    [2,1,3]
+]
+print("Hessian:",hessian)
+print("Diagonal Curvature Values:",hessian[0][0],hessian[1][1],hessian[2][2])
+print("w1-15 is the largest Absolute gradient diagonal curvature along w1")
+print("Off Diagonal Interactions:",hessian[0][1],hessian[0][2],hessian[1][2])
+print("w1-15 parameter has the strongest individual curvature along w1")
+
+#POSITIVE DEFINITE MATRIX
+#1
+hessian = [
+    [2,0],
+    [0,4]
+]
+print("Hessian:",hessian)
+print("Curvatue w.r.t w1:",hessian[0][0])
+print("Curvature w.r.t w2:",hessian[1][1])
+
+#2
+hessian = [
+    [5,1],
+    [1,3]
+]
+a = hessian[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Hessian:",hessian)
+print("First Diagonal Element:",hessian[0][0])
+print("Determinant:",determinant)
+if a>0 and determinant > 0:
+    print("It is a positive definite matrix")
+else:
+    print("It is NOT a positive definite matrix")
+
+#3
+import numpy as np
+hessian = np.array([
+    [4,1],
+    [1,2]
+])
+a = hessian[0][0]
+determinant = np.linalg.det(hessian)
+print("Determinant:",determinant)
+print("First Diagonal Element:",a)
+if a > 0 and determinant > 0:
+    print("It is a positive Definite Matrix")
+else:
+    print("It is NOT a positive Definite Matrix")
+
+#4
+hessian = [
+    [6,2],
+    [2,3]
+]
+a = hessian[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Hessian:",hessian)
+if a > 0 and determinant > 0:
+    print("It is a positive Definite Matrix")
+else:
+    print("It is NOT a positive Definite Matrix")
+
+#5
+hessian = [
+    [2,5],
+    [5,2]
+]
+a = hessian[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Hessian:",hessian)
+if a > 0 and determinant > 0:
+    print("This hessian is a positive definite matrix")
+else:
+    print("It is not a positive definite matrix")
+
+#6
+hessian = [
+    [10,2],
+    [2,5]
+]
+a = hessian[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Hessian:",hessian)
+print("Determinant:",determinant)
+if a > 0 and determinant > 0:
+    print("The matrix is positive definite")
+else:
+    print("It is not a positive definite ")
+
+#NEGATIVE DEFINITE MATRIX
+#1
+H = [
+    [-2,0],
+    [0,-4]
+]
+a = H[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Hessian:",H)
+print("First Diagonal Element:",a)
+print("Determinant:",determinant)
+if a < 0 and determinant > 0:
+    print("Negative Definite")
+else:
+    print("Not negative definite")
+
+#2
+H = [
+    [-5,1],
+    [1,-3]
+]
+a = H[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+if a < 0 and determinant > 0:
+    print("Negative Definite")
+else:
+    print("Not negative definite")
+
+#3
+import numpy as np
+H = np.array([
+    [-4,2],
+    [2,-5]
+])
+a = H[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Determinant:",determinant)
+print("First Diagonal Element:",a)
+if a < 0 and determinant > 0:
+    print("Negative Definite")
+else:
+    print("Not a negative definite")
+
+#4
+H = [
+    [-6,2],
+    [2,-3]
+]
+a = H[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+if a < 0 and determinant > 0:
+    print("Negative Definite")
+else:
+    print("Not negative Definite")
+print("Local Maximum")
+
+#5
+H = np.array([
+    [-10,3],
+    [3,-5]
+])
+a = H[0][0]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Determinant:",determinant)
+print("First Diagonal Element:",a)
+if a < 0 and determinant > 0:
+    print("Negative Definite")
+else:
+    print("not Negative Definite")
+print("Its a local maximum and curvature downward like upside down bowl")
+print("If gradient = 0,Stationary Point")
+
+#6
+H = np.array([
+    [-12,4,1],
+    [4,-8,2],
+    [1,2,-6]
+])
+determinant = (
+    H[0][0] * (H[1][1] * H[2][2] - H[1][2] * H[2][1])
+    - H[0][1] * (H[1][0] * H[2][2] - H[1][2] * H[2][0])
+    - H[0][2] * (H[1][0] * H[2][1] - H[1][1] * H[2][0])
+)
+diagonal_values = [H[0][0], H[1][1], H[2][2]]
+print("Hessian:",H)
+print("All Diagonal Elements:", diagonal_values)
+print("Determinant:", determinant)
+
+#SADDLE POINT
+#1
+H = [
+    [2,0],
+    [0,-2]
+]
+determinant = H[0][0]*H[1][1]-H[0][1]*H[1][0]
+print("Determinant:",determinant)
+if determinant < 0:
+    print("Saddle point")
+
+#2
+H = [
+    [4,1],
+    [1,-3]
+]
+a = H[0][0]
+b = H[1][1]
+determinant = H[0][0]*H[1][1]-H[0][1]*H[1][0]
+print("First Diagonal Element:",a)
+print("Second Diagona Element:",b)
+print("Determinant:",determinant)
+if determinant < 0:
+    print("Indefinite/saddle")
+
+#3
+import numpy as np
+H = np.array([
+    [3,2],
+    [2,-5]
+])
+determinant = H[0][0]*H[1][1]-H[0][1]*H[1][0]
+print("Determinant:",determinant)
+if determinant < 0:
+    print("Indefinite/saddle")
+
+#4
+w1 = 0
+w2 = 0
+partial_w1 = 2*w1
+partial_w2 = 2*w2
+gradient = [partial_w1,partial_w2]
+f_xx = 2
+f_xy = 0
+f_yx = 0
+f_yy = 2
+hessian = [
+    [f_xx,f_xy],
+    [f_yx,f_yy]
+]
+determinant = hessian[0][0]*hessian[1][1]-hessian[0][1]*hessian[1][0]
+print("Partial w.r.t w1:",partial_w1)
+print("Partial w.r.t w2:",partial_w2)
+print("Gradient:",gradient)
+print("Hessian:",hessian)
+print("Determinant:",determinant)
+if determinant < 0:
+    print("Saddle Point")
+
+#5
+H = [
+    [6,2],
+    [2,-4]
+]
+determinant = H[0][0]*H[1][1]-H[0][1]*H[1][0]
+print("Determinant:",determinant)
+if determinant < 0:
+    print("Saddle Point")
+
+#6
+import numpy as np
+H = np.array([
+    [5,2,1],
+    [2,-4,0],
+    [1,0,3]
+])
+eigen_values = [5.51,2.44,-3.95]
+positive_eigen = [5.51,2.44]
+negative_eigen = [-3.95]
+print("Eigen Values:",eigen_values)
+print("Count of positive eigen values:",len(positive_eigen))
+print("Count of negative eigen values:",len(negative_eigen))
+if determinant < 0:
+    print("Indefinite/Saddle")
