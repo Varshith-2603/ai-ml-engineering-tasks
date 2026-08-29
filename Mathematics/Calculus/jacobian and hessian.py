@@ -288,3 +288,96 @@ print("dy1_dx2:",dy1_dx2)
 print("dy2_dx1:",dy2_dx1)
 print("dy2_dx2:",dy2_dx2)
 print("Jacobian:",jacobian)
+
+
+#HESSIAN
+#1
+fxx = 2
+fxy = 0
+fyy = 2
+fyx = 0
+hessian = [
+    [fxx,fxy],
+    [fyx,fyy]
+]
+print("Hessian:",hessian)
+
+#2
+fxx = 6
+fxy = 0
+fyy = 10
+fyx = 0
+hessian = [
+    [fxx,fxy],
+    [fyx,fyy]
+]
+print("Hessian:",hessian)
+
+#3
+import numpy as np
+fxx = 2
+fxy = 4
+fyx = 4
+fyy = 6
+hessian = np.array([
+    [fxx,fxy],
+    [fyx,fyy]
+])
+print("Hessian:",hessian)
+
+#4
+w1 = 2
+w2 = 4
+w3 = 3
+partial_w1 = 2*w1
+partial_w2 = 6*w2
+second_partial_dw1 = 2
+mixed_partial_w1 = 0
+mixed_partial_w2 = 0
+second_partial_dw2 = 6
+hessian = [
+    [second_partial_dw1,mixed_partial_w1],
+    [mixed_partial_w2,second_partial_dw2]
+
+]
+print("∂L/∂w1:",partial_w1)
+print("∂L/∂w2:",partial_w2)
+print("∂²L/∂w1²:",second_partial_dw1)
+print("∂²L/∂w1∂w2:",mixed_partial_w1)
+print("∂²L/∂w2∂w1:",mixed_partial_w2)
+print(" ∂²L/∂w2²:",second_partial_dw2)
+print("Hessian:",hessian)
+
+#5
+partial_w1 = 4*w1+4*w2
+partial_w2 = 4*w1+6*w2
+second_partial_dw1 = 8*w2
+mixed_partial_w1 = 8*w1
+mixed_partial_w2 = 10*w2
+second_partial_dw2 = 10*w1
+hessian = [
+    [second_partial_dw1,mixed_partial_w1],
+    [mixed_partial_w2,second_partial_dw2]
+
+]
+print("Hessian:",hessian)
+
+#6
+partial_dw1 = 2*w1+2*w2
+partial_dw2 = 2*w1+6*w2+4*w3
+partial_dw3 = 4*w2+10*w3
+second_partial_dw1 = 4*w2
+second_partial_dw2 = 8*w1+4*w3
+second_partial_dw3 = 14*w2
+mixed_partial_w1_w2 = 4*w1
+mixed_partial_w2_w1 = 8*w2+4*w3
+mixed_partial_w1_w3 = 0
+mixed_partial_w2_w3 = 2*w1+10*w2
+mixed_partial_w3_w1 = 0
+mixed_partial_w3_w2 = 14*w3
+hessian = [
+    [second_partial_dw1,mixed_partial_w1_w2,mixed_partial_w1_w3],
+    [mixed_partial_w2_w1,second_partial_dw2,mixed_partial_w2_w3],
+    [mixed_partial_w3_w1,mixed_partial_w3_w2,second_partial_dw3]
+]
+print("Hessian:",hessian)
