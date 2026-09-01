@@ -97,12 +97,14 @@ print("City name without last character:",without_last_char)
 
 #13
 mobile_no = int(input("Enter your mobile number: "))
-print(mobile_no[:3])
-print(mobile_no[-4:])
+print("Network Code:",mobile_no[:3])
+print("Last Four Digits:",mobile_no[-4:])
+print("Middle Three Digits:",mobile_no[3:6])
 
 #14
 user = input("Enter any string: ")
-if len(user) > 5 and (user.startswith('A') or user.startswith('a')):
+if len(user) > 5 and (user[1] == "A" or user[1] == "a"):
     print("Valid String")
 else:
     print("Invalid String")
+
