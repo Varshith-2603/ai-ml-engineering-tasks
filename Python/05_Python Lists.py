@@ -62,3 +62,63 @@ fruits = ["apple","banana","mango","orange"]
 fruits.reverse()
 print(fruits)
 
+#14
+original = [1,2,3,4]
+copy_list = original.copy()
+print("Original List:",original)
+print("Copy List:",copy_list)
+
+#15
+user = input("Enter any sentence: ")
+split = user.split()
+print(user)
+print(split)
+
+#16
+numbers = [9,2,4,5,3]
+append_list = [1,8,6]
+numbers.extend(append_list)
+numbers.sort(reverse=True)
+print(numbers)
+
+#17
+list = ["Java","is","Love"]
+list.insert(0,"Python")
+list.pop(-1)
+print(list.index("Python"))
+print(list)
+print("Length of the list: ",len(list))
+
+#18
+city1 = input("Enter the city 1 name: ")
+city2 = input("Enter the city 2 name: ")
+city3 = input("Enter the city 3 name: ")
+city4 = input("Enter the city 4 name: ")
+city5 = input("Enter the city 5 name: ")
+list = [city1,city2,city3,city4,city5]
+list.reverse()
+print(list)
+
+#19
+data = [10,20,30,20,40,20]
+data.remove(20)
+print(data)
+data.remove(20)
+print(data)
+data.remove(20)
+print(data)
+
+#19.1
+data = [10,20,30,20,40,20]
+while 20 in data:
+  data.remove(20)
+data
+
+#20
+student_marks = [98,97,89,78,72]
+student_marks.sort()
+highest_mark = max(student_marks)
+lowest_mark = min(student_marks)
+print("Student Marks: ",student_marks)
+print("Highest Marks: ",highest_mark)
+print("Lowest Marks: ",lowest_mark)
