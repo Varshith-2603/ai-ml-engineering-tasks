@@ -160,5 +160,50 @@ if number1 == number2 and number2 == number3:
 else:
     print("All three numbers are not equal")
 
-#22
+#hard(3)
+side1 = int(input("Enter the first side of a triangle: "))
+side2 = int(input("Enter the second side ofa triangle: "))
+side3 = int(input("Enter the third side of a triangle: "))
+if side1 + side2 > side3 and side2 + side3 > side1 and side3 + side1 > side2:
+  print("Valid triangle")
+if side1 == side2 and side2 == side3:
+  print("Equilateral Triangle")
+elif side1 == side2 or side2 == side3 or side1 == side3:
+  print("Isosceles Triangle")
+else:
+  print("Scalene Triangle")
+
+#hard(4)
+subject1 = int(input("Enter the student marks in first subject: "))
+subject2 = int(input("Enter the student marks in second subject: "))
+subject3 = int(input("Enter the student marks in third subject: "))
+subject4 = int(input("Enter the student marks in fourth subject: "))
+subject5 = int(input("Enter the student marks in fifth subject: "))
+total = subject1 + subject2 + subject3 + subject4 +subject5
+percentage = total/5
+print("Percentage: ",percentage)
+if percentage >= 90:
+  print("A+")
+elif percentage >= 80 and percentage <= 89:
+  print("A")
+elif percentage >= 70 and percentage <= 79:
+  print("B")
+elif percentage >= 60 and percentage <= 69:
+  print("C")
+else:
+  print("Fail")
+if percentage >= 75:
+  print("Passed with distinction")
+
+
+#hard(5)
+username = input("Enter the username: ")
+password = input("Enter the password: ")
+age = int(input("Enter the age: "))
+if username == "admin" and password == "python123" and age>=18:
+  print("Login Successful")
+elif age < 18:
+  print("You are too young to login")
+else:
+  print("Invalid credentials")
 
