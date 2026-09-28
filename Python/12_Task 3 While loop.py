@@ -158,5 +158,61 @@ while True:
         print("Invalid choice")
 
 #15
+total = 0
+num = int(input("Enter the number: "))
+while num != 0:
+    total = total + num
+    num = int(input("Enter the number: "))
+print("Final Sum:",total)   
 
-    
+#17
+row = 1
+while row <= 5:
+    print("*" * row)
+    row += 1
+
+#18
+num = 2
+while num <= 100:
+    divisor = 2
+    is_prime = True
+
+    while divisor < num:
+        if num % divisor == 0:
+            is_prime = False
+            break
+        divisor += 1
+    if is_prime:
+        print(num)
+    num += 1
+
+#19
+num = 0
+count = 0 
+marks = float(input("Enter the marks: "))
+while marks >= 0:
+    total = total + marks
+    count += 1
+    marks = float(input("Enter the marks: "))
+if count > 0:
+    average = total/count
+    print("Average marks: ",average)
+else:
+    print("No marks entered")
+
+#20
+correct_username = "admin"
+correct_password = "python123"
+attempts = 3
+while attempts > 0:
+    username = input("Enter the username: ")
+    password = input("Enter the password: ")
+    if password == correct_password and username == correct_username:
+        print("Login Successfull")
+        break
+    else:
+        attempts -= 1
+        print("Incorrect username or password")
+        print("Attempts remaining:",attempts)
+if attempts == 0:
+    print("Account blocked")
